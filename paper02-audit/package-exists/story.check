@@ -1,0 +1,8 @@
+regexp: python.x86_64\s+(\d+)\.(\d+)\.(\d+)-
+generator: <<CODE
+  [
+    "assert: ".( capture()->[0] >= 2   || 0  )." major version is more or equal 2",
+    "assert: ".( capture()->[1] >= 7   || 0  )." minor version is more or equal 7"
+  ]
+CODE
+
