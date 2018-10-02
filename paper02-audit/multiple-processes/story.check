@@ -1,7 +1,1 @@
-begin:
-sleep 5
-sleep 5
-sleep 5
-sleep 5
-sleep 5
-end:
+generator: [ "begin:", (map { "sleep 5" } (1 .. config()->{N})), "end:" ]
