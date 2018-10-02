@@ -1,9 +1,7 @@
 begin:
-start
 sleep 5
 sleep 5
 sleep 5
 sleep 5
 sleep 5
-finish
 end:
