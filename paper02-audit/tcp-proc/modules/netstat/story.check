@@ -6,8 +6,10 @@
 regexp: tcp\s+\d+\s+\d+\s+\S+?:22.*LISTEN\s+(\d+)
 
 code: <<CODE
+  our @PIDS;
   for my $f (@{captures()}){
-    my $pid = $f->[1];
+    my $pid = $f->[0];
+    print "pid: $pid ... \n";
     push @main::PIDS, $pid 
   }
 CODE
