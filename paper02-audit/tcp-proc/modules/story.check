@@ -1,0 +1,14 @@
+# root 644 /etc/dracut.conf
+# tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      69/sshd
+
+#regexp: tcp\s+\d+\s+\S+?:22.*LISTEN\s+(\d+)
+
+regexp: tcp\s+\d+\s+\d+\s+\S+?:22.*LISTEN\s+(\d+)
+
+code: <<CODE
+  for my $f (@{captures()}){
+    my $pid = $f->[1];
+    push @main::PIDS, $pid 
+  }
+CODE
+
