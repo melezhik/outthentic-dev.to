@@ -1,0 +1,12 @@
+# root 644 /etc/dracut.conf
+regexp: (\S+)\s(\d\d\d)\s(\S+)
+
+generator: <<CODE
+  my @out;
+  for my $f (@{captures()}){
+    my $fname = $f->[2];
+    push @out, "assert: ".( $f->[0] eq 'root' ? 1 : 0 )." $fname has a root owner";
+    push @out, "assert: ".( $f->[1] eq '644' ? 1 : 0 )." $fname has a 644 mode";
+  }
+  [@out]
+CODE
