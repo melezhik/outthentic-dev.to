@@ -1,1 +1,0 @@
-run_story "netstat"

@@ -1,1 +1,1 @@
-netstat -nlpW|grep ':22'
+sudo netstat -nlpW|grep ':22'

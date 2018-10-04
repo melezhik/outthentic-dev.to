@@ -1,4 +1,3 @@
-for my $p (@main::PIDS){
-  print $p, "\n";
+for my $p (our @pids){
   print `file /proc/$p/exe`
 }
