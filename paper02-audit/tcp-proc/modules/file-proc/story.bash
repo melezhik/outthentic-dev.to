@@ -1,2 +1,2 @@
-sudo file /proc/$pid/exe
+file /proc/$pid/exe
 
